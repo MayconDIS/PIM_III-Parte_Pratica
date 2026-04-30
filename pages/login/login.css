@@ -1,26 +1,4 @@
 /* =========================================
-   VARIÁVEIS E FONTES TECH
-   ========================================= */
-:root {
-    --alura-dark: #0b0c10;
-    --alura-card: #161b22;
-    --alura-cyan: #00e6e6;
-    --alura-purple: #8a2be2;
-    --text-color: #c5c6c7;
-}
-
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Inter', 'Segoe UI', sans-serif; 
-}
-
-.tech-font {
-    font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
-}
-
-/* =========================================
    BODY COM O FUNDO QUADRICULADO
    ========================================= */
 body {
