@@ -4,11 +4,13 @@ using NexTI_API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração do CORS (Permitir acesso do Frontend local)
+// Configuração do CORS (Securizado: apenas portas do Live Server)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
-        policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        policy => policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:5500")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 });
 
 // Configuração do Entity Framework
@@ -38,7 +40,12 @@ app.MapGet("/api/status", () => Results.Ok(new { message = "NexTI API está onli
 // --- USUÁRIOS ---
 app.MapGet("/api/usuarios/{username}", async (string username, AppDbContext db) =>
 {
-    var user = await db.Usuarios.FirstOrDefaultAsync(u => u.Username == username);
+    // SECURITY PATCH: Projetar (Select) apenas dados públicos do usuário para evitar vazamento do SenhaHash e Email
+    var user = await db.Usuarios
+        .Where(u => u.Username == username)
+        .Select(u => new { u.Id, u.Username, u.Nivel, u.XP, u.Moedas })
+        .FirstOrDefaultAsync();
+        
     return user is not null ? Results.Ok(user) : Results.NotFound(new { message = "Usuário não encontrado" });
 });
 
