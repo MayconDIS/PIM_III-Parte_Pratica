@@ -24,6 +24,12 @@
 - [x] Implement Entity Framework Core
 - [x] Connect frontend to backend via fetch API
 
+## Phase 4: Security & Documentation (University Extension)
+**Status: Completed**
+- [x] Implement API security patches (CORS, IDOR mitigation)
+- [x] Create Execution Manual for Evaluators
+- [x] Create Practical and Technical Manuals for Extension
+
 ---
 ## Versão em Português
 
@@ -47,3 +53,9 @@
 - [x] Configurar projeto ASP.NET Core API
 - [x] Implementar Entity Framework Core
 - [x] Conectar o frontend ao backend via fetch API
+
+## Fase 4: Segurança e Documentação (Extensão Universitária)
+**Status: Concluído**
+- [x] Implementar patches de segurança da API (CORS, mitigação IDOR)
+- [x] Criar Manual de Execução para a Banca Avaliadora
+- [x] Criar Manuais Prático e Técnico para Extensão

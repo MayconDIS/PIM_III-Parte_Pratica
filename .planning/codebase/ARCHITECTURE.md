@@ -13,9 +13,10 @@ mapped_date: "2026-04-30"
 - **Relational Database**: Modeled via Entity-Relationship Diagram with SQL Server.
 
 ### Data Flow
-- Users interact via the responsive web interface.
-- LocalStorage is currently used for immediate MVP persistence.
-- Future roadmap involves a backend in Node.js/C# and SQL Server in the cloud with JWT authentication.
+- Users interact via the responsive web interface (Vanilla JS/HTML5).
+- The Frontend `api.js` service performs HTTP GET/POST requests using the `Fetch API`.
+- The Backend (C# .NET 10 Minimal APIs) processes requests, interacting with the SQL Server via Entity Framework Core.
+- Data (XP, Flashcards, Progress) is retrieved, updated, and returned to the UI as JSON.
 
 ---
 ## Versão em Português
@@ -27,6 +28,7 @@ mapped_date: "2026-04-30"
 - **Banco de Dados Relacional**: Modelado via Diagrama Entidade-Relacionamento (DER) para SQL Server.
 
 ### Fluxo de Dados
-- Os usuários interagem através da interface web responsiva.
-- O LocalStorage é atualmente utilizado para persistência imediata no MVP.
-- O planejamento futuro envolve um backend robusto (Node.js/C#) e banco SQL Server em nuvem com autenticação JWT.
+- Os usuários interagem através da interface web responsiva (Vanilla JS/HTML5).
+- O serviço `api.js` do Frontend realiza requisições HTTP GET/POST usando a `Fetch API`.
+- O Backend (C# .NET 10 Minimal APIs) processa as requisições e interage com o SQL Server via Entity Framework Core.
+- Os dados (XP, Flashcards, Progresso) são recuperados, atualizados e retornados para a UI em formato JSON.

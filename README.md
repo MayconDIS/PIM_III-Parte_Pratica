@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/.NET_10-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
   <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" />
 </div>
 
@@ -21,19 +23,19 @@
 ### 📖 Sobre o Projeto
 A **Nex_TI** é a implementação prática de uma plataforma web focada em avaliação e apoio à aprendizagem. O projeto foi desenvolvido para resolver a "curva de esquecimento" em treinamentos acadêmicos e corporativos.
 Para isso, a plataforma integra:
-- **Estudo Ativo & Repetição Espaçada:** Implementação algorítmica do SM-2 (Vanilla JavaScript) para calcular os intervalos ideais de revisão (Motor Anki).
-- **Gamificação:** Distribuição de Pontos de Experiência (XP) e Moedas Virtuais com persistência em `localStorage`.
+- **Estudo Ativo & Repetição Espaçada:** Implementação algorítmica do SM-2 para calcular os intervalos ideais de revisão (Motor Anki).
+- **Gamificação:** Distribuição de Pontos de Experiência (XP) e Moedas Virtuais com níveis de progressão.
 - **Acessibilidade Universal:** Foco total em semântica W3C, modo de alto contraste nativo e controles de zoom.
 
-Este repositório abriga a **fase prática (MVP)** do sistema (PIM III), focando em uma arquitetura frontend modularizada e na estruturação do banco de dados relacional.
+Este repositório abriga o sistema Fullstack completo (PIM III), focado em uma arquitetura limpa (Separation of Concerns), integrando Frontend, API RESTful e Banco de Dados Relacional.
 
 ### 🚀 Tecnologias e Arquitetura
 
-O projeto foi construído seguindo as melhores práticas de Clean Code e Separação de Responsabilidades (Separation of Concerns):
+O projeto foi construído seguindo as melhores práticas do mercado:
 
-* **Frontend:** Desenvolvido em HTML5 semântico, responsivo via CSS Puro (Design System Global em `global.css`) e lógicas de negócios isoladas em módulos JavaScript puros (Vanilla JS), garantindo máxima performance sem dependências externas.
-* **Backend Projetado:** A lógica de persistência atual funciona offline (`localStorage`), preparando o terreno para a API em `C# (.NET 10)` no semestre seguinte.
-* **Banco de Dados:** SGBD `SQL Server` estruturado (`NexTI_DB.sql`) na pasta `database/`.
+* **Frontend:** Desenvolvido em HTML5 semântico, responsivo via CSS Puro (Design System Global) e lógicas isoladas em Vanilla JS, consumindo a API via `fetch`.
+* **Backend:** API RESTful desenvolvida em `C# (.NET 10)` utilizando **Minimal APIs** e **Entity Framework Core**, com políticas de CORS e mitigação de vulnerabilidades (OWASP).
+* **Banco de Dados:** SGBD `SQL Server` estruturado (`NexTI_DB.sql`) garantindo restrições de gamificação no nível do banco.
 
 ### 📂 Estrutura do Repositório
 
@@ -42,13 +44,14 @@ O projeto foi construído seguindo as melhores práticas de Clean Code e Separa�
  ┣ 📂 .planning/      # Inteligência do projeto, roadmap e arquitetura
  ┣ 📂 assets/         # Recursos globais e Design System
  ┃ ┣ 📂 css/          # global.css, splash.css
- ┃ ┗ 📂 js/           # auth.js, splash.js, data.js
+ ┃ ┗ 📂 js/           # api.js, auth.js, splash.js
+ ┣ 📂 backend/        # API C# .NET 10 (Controllers, Models, DbContext)
  ┣ 📂 database/       # Script SQL do banco de dados (NexTI_DB.sql)
- ┣ 📂 pages/          # Telas e módulos do MVP
- ┃ ┣ 📂 dashboard/    # Interface principal, scripts do motor Anki e UI
- ┃ ┗ 📂 login/        # Tela de autenticação
+ ┣ 📂 pages/          # Telas e módulos do Frontend
  ┣ 📜 index.html      # Ponto de entrada / Splash Screen
- ┗ 📜 README.md       # Este documento
+ ┣ 📜 MANUAL_DE_EXECUCAO.md  # Guia para a banca rodar o projeto
+ ┣ 📜 MANUAL_PRATICO.md      # Guia do Usuário final (Extensão Universitária)
+ ┗ 📜 MANUAL_TECNICO.md      # Guia de Arquitetura e Engenharia de Software
 ```
 
 ### 👥 Equipe de Desenvolvimento
@@ -66,19 +69,19 @@ Projeto acadêmico desenvolvido pelos alunos da UNIP - São José dos Campos (Tu
 ### 📖 About the Project
 **Nex_TI** is the practical implementation of a web-based assessment and learning support platform. The project was designed to solve the "forgetting curve" in academic and corporate training. 
 To achieve this, the platform integrates:
-- **Active Study & Spaced Repetition:** Algorithmic implementation of SM-2 (Vanilla JavaScript) to calculate optimal review intervals (Anki Engine).
-- **Gamification:** Distribution of Experience Points (XP) and Virtual Coins with persistence in `localStorage`.
+- **Active Study & Spaced Repetition:** Algorithmic implementation of SM-2 to calculate optimal review intervals (Anki Engine).
+- **Gamification:** Distribution of Experience Points (XP) and Virtual Coins with progression levels.
 - **Universal Accessibility:** Strict adherence to W3C semantics, native high-contrast mode, and zoom controls.
 
-This repository hosts the **practical phase (MVP)** of the system (PIM III), focusing on a modular frontend architecture and relational database structuring.
+This repository hosts the complete Fullstack system (PIM III), focused on a clean architecture (Separation of Concerns), integrating Frontend, RESTful API, and Relational Database.
 
 ### 🚀 Technologies and Architecture
 
-The project was built adhering to Clean Code and Separation of Concerns best practices:
+The project was built adhering to industry best practices:
 
-* **Frontend:** Developed in semantic HTML5, responsive via Vanilla CSS (Global Design System in `global.css`), and business logic isolated in pure JavaScript modules (Vanilla JS), ensuring maximum performance with no external dependencies.
-* **Planned Backend:** The current persistence logic works offline (`localStorage`), paving the way for the `C# (.NET 10)` API in the following semester.
-* **Database:** `SQL Server` RDBMS structured (`NexTI_DB.sql`) in the `database/` folder.
+* **Frontend:** Developed in semantic HTML5, responsive via Vanilla CSS (Global Design System), and business logic isolated in Vanilla JS, consuming the API via `fetch`.
+* **Backend:** RESTful API developed in `C# (.NET 10)` using **Minimal APIs** and **Entity Framework Core**, including CORS policies and vulnerability mitigations (OWASP).
+* **Database:** `SQL Server` RDBMS structured (`NexTI_DB.sql`) ensuring gamification constraints at the database level.
 
 ### 📂 Repository Structure
 
@@ -87,13 +90,14 @@ The project was built adhering to Clean Code and Separation of Concerns best pra
  ┣ 📂 .planning/      # Project intelligence, roadmap, and architecture
  ┣ 📂 assets/         # Global resources and Design System
  ┃ ┣ 📂 css/          # global.css, splash.css
- ┃ ┗ 📂 js/           # auth.js, splash.js, data.js
+ ┃ ┗ 📂 js/           # api.js, auth.js, splash.js
+ ┣ 📂 backend/        # C# .NET 10 API (Controllers, Models, DbContext)
  ┣ 📂 database/       # Database SQL script (NexTI_DB.sql)
- ┣ 📂 pages/          # MVP screens and modules
- ┃ ┣ 📂 dashboard/    # Main interface, Anki engine scripts and UI
- ┃ ┗ 📂 login/        # Authentication screen
+ ┣ 📂 pages/          # Frontend screens and modules
  ┣ 📜 index.html      # Entry point / Splash Screen
- ┗ 📜 README.md       # This file
+ ┣ 📜 MANUAL_DE_EXECUCAO.md  # Guide for evaluators to run the project
+ ┣ 📜 MANUAL_PRATICO.md      # End-User Guide (University Extension)
+ ┗ 📜 MANUAL_TECNICO.md      # Architecture and Software Engineering Guide
 ```
 
 ### 👥 Development Team
