@@ -31,6 +31,40 @@ CREATE TABLE Flashcards (
 );
 GO
 
+-- Tabela de Usuários (Gamificação)
+CREATE TABLE Usuarios (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Email NVARCHAR(100) NOT NULL UNIQUE,
+    SenhaHash NVARCHAR(255) NOT NULL,
+    
+    -- Lógica de Gamificação com Constraints
+    Nivel INT DEFAULT 1 CHECK (Nivel >= 1),
+    XP INT DEFAULT 0 CHECK (XP >= 0),
+    Moedas INT DEFAULT 0 CHECK (Moedas >= 0),
+    DataCriacao DATETIME DEFAULT GETDATE()
+);
+GO
+
+-- Tabela de Progresso (Algoritmo SM-2)
+CREATE TABLE Progresso_Flashcards (
+    UsuarioId INT NOT NULL,
+    FlashcardId INT NOT NULL,
+    
+    -- Parâmetros do Algoritmo SM-2
+    Repeticoes INT DEFAULT 0 CHECK (Repeticoes >= 0),
+    IntervaloDias FLOAT DEFAULT 0 CHECK (IntervaloDias >= 0),
+    FatorFacilidade FLOAT DEFAULT 2.5 CHECK (FatorFacilidade >= 1.3),
+    
+    -- Controle de Agendamento
+    DataProximaRevisao DATE DEFAULT CAST(GETDATE() AS DATE),
+    
+    PRIMARY KEY (UsuarioId, FlashcardId),
+    CONSTRAINT FK_Progresso_Usuarios FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id),
+    CONSTRAINT FK_Progresso_Flashcards FOREIGN KEY (FlashcardId) REFERENCES Flashcards(Id)
+);
+GO
+
 -- =======================================================
 -- 2. INSERINDO AS FASES NO BANCO
 -- =======================================================

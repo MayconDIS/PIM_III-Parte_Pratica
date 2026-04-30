@@ -13,10 +13,16 @@
 - [x] Interactive UI logic (`assets/js/`, `pages/dashboard/js/`)
 
 ## Phase 2: Database Architecture
-**Status: In Progress**
+**Status: Completed**
 - [x] Initial DDL script (`database/NexTI_DB.sql`)
-- [ ] Refine tables for SM-2 Algorithm
-- [ ] Gamification logic constraints (XP, Coins)
+- [x] Refine tables for SM-2 Algorithm
+- [x] Gamification logic constraints (XP, Coins)
+
+## Phase 3: C# Backend & API Integration
+**Status: Not Started**
+- [ ] Setup ASP.NET Core API project
+- [ ] Implement Entity Framework Core
+- [ ] Connect frontend to backend via fetch API
 
 ---
 ## Versão em Português
@@ -31,7 +37,13 @@
 - [x] Lógica interativa de UI (`assets/js/`, `pages/dashboard/js/`)
 
 ## Fase 2: Arquitetura de Banco de Dados
-**Status: Em Andamento**
+**Status: Concluído**
 - [x] Script DDL inicial (`database/NexTI_DB.sql`)
-- [ ] Refinamento de tabelas para o Algoritmo SM-2
-- [ ] Restrições e lógicas de gamificação (XP, Moedas)
+- [x] Refinamento de tabelas para o Algoritmo SM-2
+- [x] Restrições e lógicas de gamificação (XP, Moedas)
+
+## Fase 3: Backend em C# e Integração de API
+**Status: Não Iniciado**
+- [ ] Configurar projeto ASP.NET Core API
+- [ ] Implementar Entity Framework Core
+- [ ] Conectar o frontend ao backend via fetch API
