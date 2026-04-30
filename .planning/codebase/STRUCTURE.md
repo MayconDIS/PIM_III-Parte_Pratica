@@ -9,11 +9,16 @@ mapped_date: "2026-04-30"
 # Structure
 
 ### Directory Layout
-- `index.html`: Entry point (Splash Screen).
-- `assets/`: Contains global styling (`css/global.css`) and shared logic (`js/auth.js`, `js/data.js`).
-- `pages/login/`: Contains HTML/CSS for authentication flow.
-- `pages/dashboard/`: Contains HTML/CSS for the main dashboard and specific UI logic.
-- `database/`: Contains `NexTI_DB.sql` schema definitions.
+- `.planning/`: Project intelligence, workflow documentation, and architecture mapping.
+- `assets/`: Global resources and Design System.
+  - `css/`: `global.css` (Design System), `splash.css`.
+  - `img/`: Project images, vectors, and logos (`Logo UNIP.png`).
+  - `js/`: Shared core logic (`auth.js`, `data.js`, `splash.js`).
+- `database/`: SQL Server initialization scripts (`NexTI_DB.sql`).
+- `pages/`: 
+  - `dashboard/`: Main application interface, SM-2 engine scripts (`js/app.js`), and scoped styles (`style.css`).
+  - `login/`: Authentication interface (`login.html`, `login.css`).
+- `index.html`: Entry point / Splash Screen.
 
 ---
 ## Versão em Português
@@ -21,8 +26,13 @@ mapped_date: "2026-04-30"
 # Estrutura
 
 ### Layout do Diretório
-- `index.html`: Ponto de entrada (Splash Screen).
-- `assets/`: Contém estilização global (`css/global.css`) e lógica compartilhada (`js/auth.js`, `js/data.js`).
-- `pages/login/`: Contém HTML/CSS para o fluxo de autenticação.
-- `pages/dashboard/`: Contém HTML/CSS para o dashboard principal e lógica de UI específica.
-- `database/`: Contém definições de esquema em `NexTI_DB.sql`.
+- `.planning/`: Inteligência do projeto, documentação de fluxo e mapeamento arquitetural.
+- `assets/`: Recursos globais e Design System.
+  - `css/`: `global.css` (Design System), `splash.css`.
+  - `img/`: Imagens do projeto, vetores e logos (`Logo UNIP.png`).
+  - `js/`: Lógica principal compartilhada (`auth.js`, `data.js`, `splash.js`).
+- `database/`: Scripts de inicialização do SQL Server (`NexTI_DB.sql`).
+- `pages/`: 
+  - `dashboard/`: Interface principal da aplicação, scripts do motor SM-2 (`js/app.js`) e estilos com escopo (`style.css`).
+  - `login/`: Interface de autenticação (`login.html`, `login.css`).
+- `index.html`: Ponto de entrada / Tela de Carregamento (Splash Screen).
