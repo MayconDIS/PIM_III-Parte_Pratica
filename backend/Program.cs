@@ -1,17 +1,26 @@
 using Microsoft.EntityFrameworkCore;
 using NexTI_API.Data;
+using NexTI_API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configuração do CORS (Permitir acesso do Frontend local)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
+
+// Configuração do Entity Framework
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseCors("AllowFrontend");
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -19,28 +28,32 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// ==========================================
+// ENDPOINTS (ROTAS DA API)
+// ==========================================
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/api/status", () => Results.Ok(new { message = "NexTI API está online e conectada!" }))
+   .WithName("GetStatus");
+
+// --- USUÁRIOS ---
+app.MapGet("/api/usuarios/{username}", async (string username, AppDbContext db) =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    var user = await db.Usuarios.FirstOrDefaultAsync(u => u.Username == username);
+    return user is not null ? Results.Ok(user) : Results.NotFound(new { message = "Usuário não encontrado" });
+});
+
+// --- FASES ---
+app.MapGet("/api/fases", async (AppDbContext db) =>
+{
+    var fases = await db.Fases.ToListAsync();
+    return Results.Ok(fases);
+});
+
+// --- FLASHCARDS ---
+app.MapGet("/api/fases/{codigoFase}/flashcards", async (string codigoFase, AppDbContext db) =>
+{
+    var flashcards = await db.Flashcards.Where(f => f.CodigoFase == codigoFase).ToListAsync();
+    return flashcards.Any() ? Results.Ok(flashcards) : Results.NotFound(new { message = "Nenhum flashcard encontrado para esta fase" });
+});
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

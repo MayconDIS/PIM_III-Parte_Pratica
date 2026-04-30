@@ -19,10 +19,10 @@
 - [x] Gamification logic constraints (XP, Coins)
 
 ## Phase 3: C# Backend & API Integration
-**Status: In Progress**
+**Status: Completed**
 - [x] Setup ASP.NET Core API project
 - [x] Implement Entity Framework Core
-- [ ] Connect frontend to backend via fetch API
+- [x] Connect frontend to backend via fetch API
 
 ---
 ## Versão em Português
@@ -43,7 +43,7 @@
 - [x] Restrições e lógicas de gamificação (XP, Moedas)
 
 ## Fase 3: Backend em C# e Integração de API
-**Status: Em Andamento**
+**Status: Concluído**
 - [x] Configurar projeto ASP.NET Core API
 - [x] Implementar Entity Framework Core
-- [ ] Conectar o frontend ao backend via fetch API
+- [x] Conectar o frontend ao backend via fetch API
