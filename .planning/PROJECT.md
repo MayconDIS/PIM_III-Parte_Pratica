@@ -16,7 +16,7 @@ To provide a functional, interactive, and gamified interface that demonstrates t
 #### Active
 - [x] Build and refine the interactive UI components (Splash Screen, Login, Home).
 - [x] Implement robust frontend logic using Vanilla JavaScript.
-- [ ] Refine the database schema (`NexTI_DB.sql`) focusing on gamification and the SM-2 algorithm.
+- [x] Refine the database schema (`NexTI_DB.sql`) focusing on gamification and the SM-2 algorithm.
 
 ### Key Decisions
 | Decision | Rationale | Outcome |
@@ -39,7 +39,7 @@ Fornecer uma interface funcional, interativa e gamificada que demonstre a jornad
 #### Active
 - [x] Construir e refinar os componentes de UI interativos (Splash Screen, Login, Home).
 - [x] Implementar lógicas robustas de frontend utilizando Vanilla JavaScript.
-- [ ] Refinar o esquema de banco de dados (`NexTI_DB.sql`) focando em gamificação e no algoritmo SM-2.
+- [x] Refinar o esquema de banco de dados (`NexTI_DB.sql`) focando em gamificação e no algoritmo SM-2.
 
 ### Key Decisions
 | Decision | Rationale | Outcome |
