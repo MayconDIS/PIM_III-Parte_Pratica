@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações - Nex_TI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300e6e6'><path d='M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'/></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        .info-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-dark);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .info-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .info-header h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .info-header p {
+            color: var(--alura-cyan);
+            font-size: 1.1rem;
+        }
+        .info-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .info-section:last-child {
+            border-bottom: none;
+        }
+        .info-title {
+            color: var(--alura-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border-left: 4px solid var(--alura-cyan);
+        }
+        .info-item h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .info-item p {
+            color: #c5c6c7;
+            line-height: 1.6;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--alura-cyan);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header role="banner">
+        <a href="../dashboard/index.html" class="logo tech-font" style="text-decoration: none;">
+            <span style="color: #fff;">Nex_</span><span class="tech-text">TI</span>
+        </a>
+    </header>
+
+    <main class="container" role="main">
+        <a href="../dashboard/index.html" class="btn-back tech-font"><span class="material-symbols-outlined">arrow_back</span> Retornar ao Dashboard</a>
+        
+        <div class="info-container">
+            <div class="info-header">
+                <h1 class="tech-font">Central de Informações</h1>
+                <p class="tech-font">Transparência, Suporte e Documentação Oficial</p>
+            </div>
+
+            <!-- INSTITUCIONAL -->
+            <section class="info-section" id="institucional">
+                <h2 class="info-title tech-font"><span class="material-symbols-outlined">corporate_fare</span> Institucional</h2>
+                
+                <div class="info-item" id="sobre">
+                    <h3>Sobre a Nex_TI</h3>
+                    <p>A Nex_TI é uma EdTech nascida de um Projeto Integrado Multidisciplinar (PIM III). Nosso objetivo principal é combater a Curva de Esquecimento de Ebbinghaus no processo de aprendizado de tecnologia através do uso massivo do Algoritmo SM-2 (Repetição Espaçada) acoplado a um ecossistema gamificado.</p>
+                </div>
+                
+                <div class="info-item" id="metodologia">
+                    <h3>Metodologia de Ensino</h3>
+                    <p>Substituímos o aprendizado passivo por estímulos de Estudo Ativo. Ao invés de vídeos longos, o aluno consome conceitos atômicos através de "Flashcards" interativos, onde a performance no recall do conhecimento (Erro/Acerto) dita quando aquela informação será apresentada novamente.</p>
+                </div>
+                
+                <div class="info-item" id="opensource">
+                    <h3>Manifesto Open Source</h3>
+                    <p>Acreditamos que o código que molda o futuro da educação deve ser aberto. O núcleo do Nex_TI, incluindo a lógica do Anki Engine e a arquitetura em .NET 10, está disponível livremente no GitHub para auditoria, extensão e bifurcação pela comunidade.</p>
+                </div>
+
+                <div class="info-item" id="carreiras">
+                    <h3>Carreiras & Vagas</h3>
+                    <p>Estamos sempre em busca de talentos que queiram revolucionar a educação no Brasil. No momento, somos um projeto de extensão universitária e não possuímos vagas CLT abertas, mas contribuições via Pull Request no GitHub são muito bem-vindas!</p>
+                </div>
+            </section>
+
+            <!-- ECOSSISTEMA -->
+            <section class="info-section" id="ecossistema">
+                <h2 class="info-title tech-font" style="color: #ffd700;"><span class="material-symbols-outlined">hub</span> Ecossistema</h2>
+                
+                <div class="info-item" id="trilhas">
+                    <h3>Trilhas e Disciplinas</h3>
+                    <p>Nossa plataforma é modular. Oferecemos pacotes curriculares focados em Engenharia de Software, Lógica de Programação, Cibersegurança e Arquitetura de Nuvem. Cada trilha é dividida em missões progressivas que dão XP ao serem concluídas.</p>
+                </div>
+
+                <div class="info-item" id="enade">
+                    <h3>Simulado ENADE</h3>
+                    <p>Módulo exclusivo de preparação para o ENADE, contendo questões reais de provas anteriores de Análise e Desenvolvimento de Sistemas formatadas no modelo de Flashcard. Responda, verifique o verso para explicação detalhada e ganhe pontuação dobrada.</p>
+                </div>
+
+                <div class="info-item" id="comunidade">
+                    <h3>Comunidade Devs</h3>
+                    <p>A seção de comunidade visa conectar alunos em diferentes níveis (Júnior, Pleno e Sênior) baseados no XP da plataforma. É um espaço assíncrono para tirar dúvidas de código e trocar experiências sobre carreira (Funcionalidade prevista para V2).</p>
+                </div>
+
+                <div class="info-item" id="loja">
+                    <h3>Loja de Bônus (Coins)</h3>
+                    <p>As Moedas Virtuais (Coins) que você minera estudando diariamente servem para desbloquear Flashcards ocultos de disciplinas avançadas ou "Easter Eggs" sobre cultura hacker e curiosidades de TI. Quanto mais você estuda, mais acesso você tem.</p>
+                </div>
+            </section>
+
+            <!-- SUPORTE E LEGAL -->
+            <section class="info-section" id="suporte">
+                <h2 class="info-title tech-font" style="color: #ff4500;"><span class="material-symbols-outlined">gavel</span> Suporte & Legal</h2>
+                
+                <div class="info-item" id="faq">
+                    <h3>Central de Ajuda (FAQ)</h3>
+                    <p><strong>P: Como recomeço o meu progresso?</strong><br>
+                    R: No Dashboard, abra o menu superior direito e clique em "Formatar Sistema". ISSO APAGARÁ TODO SEU XP LOCAL.<br><br>
+                    <strong>P: Como o algoritmo decide quando vou ver a carta de novo?</strong><br>
+                    R: Usamos o SM-2 modificado. Se você errar, verá a carta logo em seguida. Se acertar, ela vai para a caixa de revisão de amanhã. Acertos consecutivos multiplicam o tempo de distância.</p>
+                </div>
+
+                <div class="info-item" id="termos">
+                    <h3>Termos de Uso</h3>
+                    <p>Ao acessar o Nex_TI, você compreende que trata-se de um sistema de avaliação e extensão acadêmica. É proibido o uso de automação ou bots para inflar XP e farmar Moedas. Contas identificadas com comportamento malicioso serão expurgadas do servidor SQL.</p>
+                </div>
+
+                <div class="info-item" id="privacidade">
+                    <h3>Aviso de Privacidade (LGPD)</h3>
+                    <p>A Nex_TI atua em conformidade com a LGPD. Não capturamos cookies de rastreamento de terceiros. Seu E-mail e Username são mantidos em banco de dados isolado e suas senhas são armazenadas através de hash unidirecional (BCrypt). Você tem total controle para solicitar a deleção do seu perfil ("Esquecimento").</p>
+                </div>
+
+                <div class="info-item" id="contato">
+                    <h3>Contato do Desenvolvedor</h3>
+                    <p>Para suporte técnico, bugs na API ou reportar vulnerabilidades de segurança (Bug Bounty), abra uma "Issue" no repositório oficial do GitHub ou comunique-se com a equipe do PIM III através dos canais da UNIP.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 50px;">
+        <div class="footer-bottom">
+            <div class="footer-copyright tech-font">
+                &copy; 2026 Nex_TI Academy. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
