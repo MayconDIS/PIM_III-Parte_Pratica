@@ -1,5 +1,5 @@
 ---
-mapped_date: "2026-04-30"
+mapped_date: "2026-05-02"
 ---
 *Read in: [English](#english-version) | [Português](#versao-em-portugues)*
 
@@ -17,8 +17,9 @@ mapped_date: "2026-04-30"
 - `backend/`: C# .NET 10 RESTful API containing Entity Framework DbContext, Models, and Minimal API routes.
 - `database/`: SQL Server initialization scripts (`NexTI_DB.sql`).
 - `pages/`: 
-  - `dashboard/`: Main application interface, SM-2 engine scripts (`js/app.js`), and scoped styles (`style.css`).
+  - `dashboard/`: Main application interface, SM-2 engine scripts (`js/app.js`), Neural Map visualization (`js/neural-map.js`), and scoped styles (`style.css`).
   - `login/`: Authentication interface (`login.html`, `login.css`).
+  - `sobre/`: Informational page about the platform (`index.html`).
 - `index.html`: Entry point / Splash Screen.
 
 ---
@@ -35,6 +36,7 @@ mapped_date: "2026-04-30"
 - `backend/`: API RESTful em C# .NET 10 contendo DbContext do Entity Framework, Models e rotas Minimal API.
 - `database/`: Scripts de inicialização do SQL Server (`NexTI_DB.sql`).
 - `pages/`: 
-  - `dashboard/`: Interface principal da aplicação, scripts do motor SM-2 (`js/app.js`) e estilos com escopo (`style.css`).
+  - `dashboard/`: Interface principal da aplicação, scripts do motor SM-2 (`js/app.js`), visualização do Mapa Neural (`js/neural-map.js`) e estilos com escopo (`style.css`).
   - `login/`: Interface de autenticação (`login.html`, `login.css`).
+  - `sobre/`: Página informativa sobre a plataforma (`index.html`).
 - `index.html`: Ponto de entrada / Tela de Carregamento (Splash Screen).
