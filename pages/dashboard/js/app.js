@@ -677,6 +677,7 @@ function resetarProgresso() {
         localStorage.removeItem(userKey + 'decks');
         localStorage.removeItem(userKey + 'rank');
         localStorage.removeItem(userKey + 'srs'); 
+        localStorage.removeItem(userKey + 'map_state');
         
         window.location.href = '../login/login.html'; 
     }

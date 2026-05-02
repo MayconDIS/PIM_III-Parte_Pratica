@@ -776,6 +776,77 @@ body.high-contrast-mode .xp-badge {
 }
 
 /* =========================================
+   MAPA NEURAL (OBSIDIAN VIEW) - MOTOR GRÁFICO
+   ========================================= */
+.obsidian-canvas {
+    position: relative;
+    width: 4000px;
+    height: 4000px;
+    background-color: #0b0c10;
+    background-image: radial-gradient(rgba(0, 230, 230, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform-origin: 0 0;
+    will-change: transform;
+}
+
+.obsidian-node {
+    position: absolute;
+    border-radius: 50%;
+    cursor: grab;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 10;
+}
+
+.obsidian-node:active { cursor: grabbing; }
+
+.obsidian-node .label {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    color: #8b92a5; font-size: 0.8rem; white-space: nowrap; pointer-events: none;
+    opacity: 0; transition: opacity 0.3s; background: rgba(11, 12, 16, 0.9);
+    border: 1px solid #30363d; padding: 4px 8px; border-radius: 6px; margin-top: 8px;
+}
+.obsidian-node:hover .label { opacity: 1; color: #fff; z-index: 20; }
+
+.obsidian-edge {
+    position: absolute; height: 1px; transform-origin: 0 50%; z-index: 1; pointer-events: none;
+}
+
+/* Efeito de Pulsar (Lastro Neural) */
+.neural-pulse {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--alura-cyan);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 5;
+    animation: pulseOut 0.8s cubic-bezier(0.1, 0, 0.1, 1) forwards;
+}
+
+@keyframes pulseOut {
+    100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+}
+
+/* Mini Carta Flutuante no Mapa */
+.mini-flashcard {
+    position: absolute;
+    background: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--alura-cyan);
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(0, 230, 230, 0.2);
+    z-index: 100;
+    pointer-events: none;
+    animation: fadeSlideUp 0.3s ease forwards;
+}
+.mini-flashcard h4 { font-size: 0.9rem; color: var(--alura-cyan); margin-bottom: 10px; border-bottom: 1px dashed #30363d; padding-bottom: 5px; }
+.mini-flashcard p { font-size: 0.85rem; color: #c5c6c7; }
+
+/* =========================================
    RESPONSIVIDADE E LINHAS PONTILHADAS MOBILE
    ========================================= */
 @media (max-width: 800px) {
