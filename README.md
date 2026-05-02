@@ -26,6 +26,7 @@ Para isso, a plataforma integra:
 - **Estudo Ativo & Repetição Espaçada:** Implementação algorítmica do SM-2 para calcular os intervalos ideais de revisão (Motor Anki).
 - **Gamificação:** Distribuição de Pontos de Experiência (XP) e Moedas Virtuais com níveis de progressão.
 - **Acessibilidade Universal:** Foco total em semântica W3C, modo de alto contraste nativo e controles de zoom.
+- **Mapa Neural (Obsidian View):** Visualização interativa do progresso acadêmico com física de molas, drag-and-drop e persistência de estado.
 
 Este repositório abriga o sistema Fullstack completo (PIM III), focado em uma arquitetura limpa (Separation of Concerns), integrando Frontend, API RESTful e Banco de Dados Relacional.
 
@@ -48,6 +49,9 @@ O projeto foi construído seguindo as melhores práticas do mercado:
  ┣ 📂 backend/        # API C# .NET 10 (Controllers, Models, DbContext)
  ┣ 📂 database/       # Script SQL do banco de dados (NexTI_DB.sql)
  ┣ 📂 pages/          # Telas e módulos do Frontend
+ ┃ ┣ 📂 dashboard/    # Interface principal, Motor SM-2 e Mapa Neural
+ ┃ ┣ 📂 login/        # Autenticação do usuário
+ ┃ ┗ 📂 sobre/        # Página informativa da plataforma
  ┣ 📜 index.html      # Ponto de entrada / Splash Screen
  ┣ 📜 MANUAL_DE_EXECUCAO.md  # Guia para a banca rodar o projeto
  ┣ 📜 MANUAL_PRATICO.md      # Guia do Usuário final (Extensão Universitária)
@@ -72,6 +76,7 @@ To achieve this, the platform integrates:
 - **Active Study & Spaced Repetition:** Algorithmic implementation of SM-2 to calculate optimal review intervals (Anki Engine).
 - **Gamification:** Distribution of Experience Points (XP) and Virtual Coins with progression levels.
 - **Universal Accessibility:** Strict adherence to W3C semantics, native high-contrast mode, and zoom controls.
+- **Neural Map (Obsidian View):** Interactive academic progress visualization with spring physics, drag-and-drop, and state persistence.
 
 This repository hosts the complete Fullstack system (PIM III), focused on a clean architecture (Separation of Concerns), integrating Frontend, RESTful API, and Relational Database.
 
@@ -94,6 +99,9 @@ The project was built adhering to industry best practices:
  ┣ 📂 backend/        # C# .NET 10 API (Controllers, Models, DbContext)
  ┣ 📂 database/       # Database SQL script (NexTI_DB.sql)
  ┣ 📂 pages/          # Frontend screens and modules
+ ┃ ┣ 📂 dashboard/    # Main interface, SM-2 Engine, and Neural Map
+ ┃ ┣ 📂 login/        # User authentication
+ ┃ ┗ 📂 sobre/        # Platform informational page
  ┣ 📜 index.html      # Entry point / Splash Screen
  ┣ 📜 MANUAL_DE_EXECUCAO.md  # Guide for evaluators to run the project
  ┣ 📜 MANUAL_PRATICO.md      # End-User Guide (University Extension)
