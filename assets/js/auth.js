@@ -29,6 +29,60 @@ function toggleMode(event) {
     }
 }
 
+async function handleAuth(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('email').value.trim(); // Usando email como username para compatibilidade visual
+    const password = document.getElementById('password').value;
+    const btn = document.getElementById('btn-submit');
+    
+    if (isLoginMode) {
+        btn.innerText = "Autenticando...";
+        try {
+            const user = await ApiService.login(username, password);
+            localStorage.setItem('quest_user_id', user.id);
+            localStorage.setItem('quest_user_name', user.username);
+            localStorage.setItem('quest_user_nivel', user.nivel);
+            
+            setTimeout(() => { window.location.href = '../dashboard/index.html'; }, 800);
+        } catch (error) {
+            mostrarErro("Acesso Bloqueado!");
+        } finally {
+            btn.innerText = "Entrar no Terminal";
+        }
+    } else {
+        const nome = document.getElementById('nome').value.trim();
+        btn.innerText = "Criando Conta...";
+        try {
+            await ApiService.register(username, username + "@nexti.com", password);
+            localStorage.setItem('quest_user_name', nome);
+            
+            setTimeout(() => { window.location.href = '../dashboard/index.html'; }, 1000);
+        } catch (error) {
+            mostrarErro(error.message);
+        } finally {
+            btn.innerText = "Criar Conta";
+        }
+    }
+}
+
+function mostrarErro(mensagem) {
+    const btn = document.getElementById('btn-submit');
+    const textoOriginal = btn.innerText;
+    
+    btn.innerText = mensagem;
+    btn.style.color = "#ff5555"; 
+    btn.style.borderColor = "#ff5555";
+    
+    setTimeout(() => { 
+        btn.innerText = textoOriginal; 
+        btn.style.color = "var(--alura-cyan)"; 
+        btn.style.borderColor = "var(--alura-cyan)"; 
+    }, 2500);
+}
+
+}
+
 function handleAuth(event) {
     event.preventDefault();
     

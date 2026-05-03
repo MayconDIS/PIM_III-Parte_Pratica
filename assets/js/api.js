@@ -16,7 +16,42 @@ const ApiService = {
         }
     },
 
-    // 2. Busca o Usuário no Banco de Dados
+    // 2. Autenticação: Login
+    login: async (username, password) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            if (!response.ok) throw new Error("Credenciais inválidas");
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    // 3. Autenticação: Registro
+    register: async (username, email, password) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/auth/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, email, senhaHash: password })
+            });
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.message || "Erro ao registrar");
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    // 4. Busca o Usuário no Banco de Dados (Consulta Pública)
     getUsuario: async (username) => {
         try {
             const response = await fetch(`${API_BASE_URL}/usuarios/${username}`);
@@ -28,7 +63,7 @@ const ApiService = {
         }
     },
 
-    // 3. Busca todas as Fases cadastradas
+    // 5. Busca todas as Fases cadastradas
     getFases: async () => {
         try {
             const response = await fetch(`${API_BASE_URL}/fases`);
@@ -39,7 +74,7 @@ const ApiService = {
         }
     },
 
-    // 4. Busca os Flashcards de uma Fase específica
+    // 6. Busca os Flashcards de uma Fase específica
     getFlashcardsPorFase: async (codigoFase) => {
         try {
             const response = await fetch(`${API_BASE_URL}/fases/${codigoFase}/flashcards`);
@@ -48,6 +83,21 @@ const ApiService = {
         } catch (error) {
             console.error(error);
             return [];
+        }
+    },
+
+    // 7. Atualiza o progresso SM-2
+    atualizarProgresso: async (usuarioId, flashcardId, qualidade) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/progresso/atualizar`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ usuarioId, flashcardId, qualidade })
+            });
+            return await response.json();
+        } catch (error) {
+            console.error("Erro ao atualizar progresso:", error);
+            throw error;
         }
     }
 };
