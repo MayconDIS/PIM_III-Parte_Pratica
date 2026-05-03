@@ -82,7 +82,6 @@ function mostrarErro(mensagem) {
     }, 2500);
 }
 
-}
 
 function handleAuth(event) {
     event.preventDefault();
