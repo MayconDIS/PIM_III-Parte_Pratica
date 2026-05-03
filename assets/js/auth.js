@@ -39,10 +39,11 @@ async function handleAuth(event) {
     if (isLoginMode) {
         btn.innerText = "Autenticando...";
         try {
-            const user = await ApiService.login(username, password);
-            localStorage.setItem('quest_user_id', user.id);
-            localStorage.setItem('quest_user_name', user.username);
-            localStorage.setItem('quest_user_nivel', user.nivel);
+            const data = await ApiService.login(username, password);
+            localStorage.setItem('quest_jwt_token', data.token);
+            localStorage.setItem('quest_user_id', data.user.id);
+            localStorage.setItem('quest_user_name', data.user.username);
+            localStorage.setItem('quest_user_nivel', data.user.nivel);
             
             setTimeout(() => { window.location.href = '../dashboard/index.html'; }, 800);
         } catch (error) {

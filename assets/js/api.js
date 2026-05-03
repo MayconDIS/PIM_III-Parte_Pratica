@@ -86,14 +86,19 @@ const ApiService = {
         }
     },
 
-    // 7. Atualiza o progresso SM-2
+    // 7. Atualiza o progresso SM-2 (Agora exige Token JWT)
     atualizarProgresso: async (usuarioId, flashcardId, qualidade) => {
+        const token = localStorage.getItem('quest_jwt_token');
         try {
             const response = await fetch(`${API_BASE_URL}/progresso/atualizar`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
                 body: JSON.stringify({ usuarioId, flashcardId, qualidade })
             });
+            if (!response.ok) throw new Error("Sessão expirada ou erro no servidor");
             return await response.json();
         } catch (error) {
             console.error("Erro ao atualizar progresso:", error);
@@ -104,3 +109,4 @@ const ApiService = {
 
 // Exportar globalmente para ser usado no dashboard e login
 window.ApiService = ApiService;
+
