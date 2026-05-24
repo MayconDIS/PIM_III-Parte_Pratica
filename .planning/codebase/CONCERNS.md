@@ -9,8 +9,8 @@ mapped_date: "2026-04-30"
 # Concerns
 
 ### Known Issues & Debt
-- **Theoretical Codebase**: The actual implementation logic is primarily in mockups and code snippets within the report. A real application skeleton needs to be bootstrapped.
-- **Security**: The current MVP utilizes LocalStorage for persistence, which is insecure for sensitive data. Migration to a proper backend with JWT and SQL Server is required.
+- **Hardcoded JWT Secret Key**: The token generation key is currently hardcoded in `Program.cs` as a developer fallback. For production deployment, this must be migrated to Environment Variables or .NET User Secrets to prevent credentials exposure.
+- **State Synchronization**: While basic layout positions (node zoom/pan) are stored in `LocalStorage`, academic progress data (learned cards, user XP, level, and coin balance) must be synchronized continuously with the database rather than relying on browser-only cache.
 
 ---
 ## Versão em Português
@@ -18,5 +18,5 @@ mapped_date: "2026-04-30"
 # Preocupações (Concerns)
 
 ### Problemas Conhecidos e Débito Técnico
-- **Base de Código Teórica**: A lógica real de implementação está restrita a protótipos visuais e trechos embutidos no relatório. É necessário inicializar a estrutura real do software.
-- **Segurança**: O MVP atual utiliza o LocalStorage para persistência no navegador, o que é inseguro para dados sensíveis. Requer uma migração futura para um backend estruturado com autenticação JWT e SQL Server.
+- **Chave Secreta JWT Hardcoded**: A chave para assinatura do token JWT está definida diretamente no código em `Program.cs`. Em ambiente de produção, esta chave deve ser extraída para Variáveis de Ambiente ou .NET User Secrets para evitar exposição de credenciais.
+- **Sincronização de Estado**: Embora coordenadas e zoom do Mapa Neural usem `LocalStorage` (adequado para preferências visuais), todo o progresso acadêmico (XP, nível, moedas do aluno e cartas estudadas) deve ser sincronizado de forma consistente com o banco de dados através da API para evitar fraudes ou perdas de dados.

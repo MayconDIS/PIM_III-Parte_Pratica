@@ -18,6 +18,7 @@ To provide a functional, interactive, and gamified interface that demonstrates t
 - [x] Implement robust frontend logic using Vanilla JavaScript.
 - [x] Refine the database schema (`NexTI_DB.sql`) focusing on gamification and the SM-2 algorithm.
 - [x] Migrate and modularize the Neural Map (Obsidian View) visualization engine into the Dashboard.
+- [x] Refactor the C# backend using SOLID principles (SRP/DIP) for SM-2 isolation and route modularization.
 
 ### Key Decisions
 | Decision | Rationale | Outcome |
@@ -42,6 +43,7 @@ Fornecer uma interface funcional, interativa e gamificada que demonstre a jornad
 - [x] Implementar lógicas robustas de frontend utilizando Vanilla JavaScript.
 - [x] Refinar o esquema de banco de dados (`NexTI_DB.sql`) focando em gamificação e no algoritmo SM-2.
 - [x] Migrar e modularizar o motor de visualização do Mapa Neural (Obsidian View) para o Dashboard.
+- [x] Refatorar o backend C# com base no SOLID (SRP/DIP) para isolamento do SM-2 e modularização das rotas.
 
 ### Key Decisions
 | Decision | Rationale | Outcome |

@@ -41,6 +41,13 @@
 - [x] CSS animations: neural pulse, glow effects, mini-flashcard tooltips
 - [x] Accessibility widget (Zoom In/Out, High Contrast) inside modal
 
+## Phase 6: SOLID Backend Refactoring
+**Status: Completed**
+- [x] Isolate SM-2 spaced repetition calculation logic in a dedicated service (SRP/DIP)
+- [x] Extract Minimal API route registrations from Program.cs to modular extensions (SRP)
+- [x] Clean up and refactor Program.cs entry point
+- [x] Verify compilation and end-to-end integration
+
 ---
 ## Versão em Português
 
@@ -81,3 +88,10 @@
 - [x] Popups de flashcards sinápticos ao clicar nos nós de cartas
 - [x] Animações CSS: pulso neural, efeitos de brilho, tooltips de mini-flashcard
 - [x] Widget de acessibilidade (Zoom In/Out, Alto Contraste) dentro do modal
+
+## Fase 6: Refatoração SOLID do Backend
+**Status: Concluído**
+- [x] Isolar lógica matemática do algoritmo SM-2 em um serviço dedicado (SRP/DIP)
+- [x] Extrair rotas de API em mapeamentos de extensão modular para limpar o Program.cs (SRP)
+- [x] Limpar e reestruturar o arquivo de entrada Program.cs
+- [x] Validar compilação e integração de ponta a ponta
