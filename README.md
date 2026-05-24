@@ -60,7 +60,7 @@ O projeto foi construído seguindo as melhores práticas do mercado:
 
 ### 👥 Equipe de Desenvolvimento
 Projeto acadêmico desenvolvido pelos alunos da UNIP - São José dos Campos (Turma 2026 / Diurno):
-- **Gabriel Alves Moreira** (H67HJ4)
+- **Gabriel Alves Moreira** (H67HJI4)
 - **Maciel Costa da Silva** (R280985)
 - **Maycon Douglas Inácio Silva** (H719CD3)
 - **Miguel Angel Fernandez Ortiz** (H7858F9)
@@ -110,7 +110,7 @@ The project was built adhering to industry best practices:
 
 ### 👥 Development Team
 Academic project developed by students from UNIP - São José dos Campos (Class of 2026 / Daytime):
-- **Gabriel Alves Moreira** (H67HJ4)
+- **Gabriel Alves Moreira** (H67HJI4)
 - **Maciel Costa da Silva** (R280985)
 - **Maycon Douglas Inácio Silva** (H719CD3)
 - **Miguel Angel Fernandez Ortiz** (H7858F9)
