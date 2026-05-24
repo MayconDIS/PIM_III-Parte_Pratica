@@ -216,6 +216,14 @@ header {
     font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
 }
 
+.stats-icon {
+    display: inline-block;
+    background: linear-gradient(135deg, #00ff88 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
 /* =========================================
    HUD DO USUÁRIO
    ========================================= */
@@ -662,6 +670,12 @@ body.high-contrast-mode .tech-text {
 }
 
 body.high-contrast-mode .target-icon {
+    background: none !important;
+    -webkit-text-fill-color: #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+body.high-contrast-mode .stats-icon {
     background: none !important;
     -webkit-text-fill-color: #FFFF00 !important;
     color: #FFFF00 !important;
