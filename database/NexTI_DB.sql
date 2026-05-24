@@ -259,3 +259,54 @@ INSERT INTO Flashcards (CodigoFase, Frente, Verso, Dica) VALUES
 ('bonus4', N'Bônus 04: Qual a diferença entre Júnior, Pleno e Sênior?', N'Júnior precisa de ajuda. Pleno resolve sozinho. Sênior evita o problema antes dele acontecer.', N'Resumo clássico do mercado.'),
 ('bonus4', N'Bônus 04: O que é a cultura ''Open Source''?', N'O modelo de desenvolvimento de software onde o código-fonte é aberto e colaborativo.', N'O Linux é o maior exemplo mundial.');
 GO
+
+-- =======================================================
+-- 4. TABELAS ADICIONAIS: MÓDULO DE PROVAS E SIMULADOS
+--    (MAPEADO NO PIM III E PLANEJADO PARA O 4º SEMESTRE)
+-- =======================================================
+
+-- Tabela de Áreas de Conhecimento
+CREATE TABLE tb_areas_conhecimento (
+    id_area INT IDENTITY(1,1) PRIMARY KEY,
+    nome_area VARCHAR(100) NOT NULL
+);
+GO
+
+-- Tabela de Provas
+CREATE TABLE tb_provas (
+    id_prova INT IDENTITY(1,1) PRIMARY KEY,
+    ano INT NOT NULL,
+    tipo VARCHAR(50) NOT NULL
+);
+GO
+
+-- Tabela de Questões
+CREATE TABLE tb_questoes (
+    id_questao INT IDENTITY(1,1) PRIMARY KEY,
+    id_area INT NOT NULL,
+    enunciado NVARCHAR(MAX) NOT NULL,
+    origem VARCHAR(50),
+    CONSTRAINT FK_Questao_Area FOREIGN KEY (id_area) REFERENCES tb_areas_conhecimento(id_area)
+);
+GO
+
+-- Tabela de Alternativas
+CREATE TABLE tb_alternativas (
+    id_alternativa INT IDENTITY(1,1) PRIMARY KEY,
+    id_questao INT NOT NULL,
+    texto NVARCHAR(MAX) NOT NULL,
+    is_correta BIT NOT NULL,
+    CONSTRAINT FK_Alt_Questao FOREIGN KEY (id_questao) REFERENCES tb_questoes(id_questao) ON DELETE CASCADE
+);
+GO
+
+-- Tabela Associativa Prova_Questão
+CREATE TABLE tb_prova_questao (
+    id_prova INT NOT NULL,
+    id_questao INT NOT NULL,
+    PRIMARY KEY (id_prova, id_questao),
+    CONSTRAINT FK_PQ_P FOREIGN KEY (id_prova) REFERENCES tb_provas(id_prova),
+    CONSTRAINT FK_PQ_Q FOREIGN KEY (id_questao) REFERENCES tb_questoes(id_questao)
+);
+GO
+GO
