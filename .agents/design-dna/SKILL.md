@@ -122,7 +122,12 @@ Before writing the HTML, analyze the target project's design system or palette (
 
                         <!-- Fonts Card -->
                         <div class="dna-card fonts-card">
-                            <h3 class="card-label">Fonts</h3>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <h3 class="card-label">Fonts</h3>
+                                <a href="https://fonts.google.com/" target="_blank" style="color: var(--link-cyan); font-size: 0.75rem; text-decoration: none; display: flex; align-items: center; gap: 0.25rem;">
+                                    <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i> Google Fonts
+                                </a>
+                            </div>
                             <div class="fonts-preview-container">
                                 <div class="font-preview-item">
                                     <span class="font-huge-char font-fira">Aa</span>
