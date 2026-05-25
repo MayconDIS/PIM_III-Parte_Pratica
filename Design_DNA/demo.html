@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design_DNA — Visual Identity Showcase</title>
+    
+    <!-- Importação das Fontes Oficiais do Design System -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <!-- Importação do Estilo Estrutural do Design_DNA -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Estilos específicos apenas para a página de demonstração */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 4rem 2rem;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        h1 em {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent-gold);
+        }
+
+        .subtitle {
+            font-family: var(--font-sans);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0.5rem auto 2rem auto;
+            line-height: 1.6;
+        }
+
+        .badge {
+            background-color: var(--accent-olive-bg);
+            color: var(--accent-olive-text);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--accent-olive-text);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid de Exibição */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Customizações Premium de Elementos */
+        .color-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .color-block {
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .color-block span {
+            font-size: 0.7rem;
+            opacity: 0.6;
+            margin-top: 0.25rem;
+        }
+
+        /* Tipografia */
+        .typo-sample {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .typo-sample:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .typo-label {
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+            margin-bottom: 0.25rem;
+        }
+
+        /* Botões */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-sans);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #121214;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 15px rgba(201, 177, 119, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--link-cyan);
+            color: var(--link-cyan);
+            box-shadow: 0 0 15px rgba(0, 230, 230, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .btn-link {
+            color: var(--link-cyan);
+            background: none;
+            border: none;
+            padding: 0;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .btn-link:hover {
+            color: #80f0f0;
+        }
+
+        /* Mockup do SM-2 Algorithm Card */
+        .sm2-card {
+            background-color: var(--card-bg-header);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .sm2-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .sm2-metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .sm2-metric-value {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--link-cyan);
+        }
+
+        .card-header-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .card-header-icon span {
+            font-size: 1.8rem;
+        }
+
+        .card-header-icon h3 {
+            margin: 0;
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            z-index: 1;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--link-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Glows radiais animados flutuando no background -->
+    <div class="radial-glow glow-left" aria-hidden="true"></div>
+    <div class="radial-glow glow-right" aria-hidden="true"></div>
+
+    <div class="container">
+        
+        <header>
+            <div class="badge">Design_DNA</div>
+            <h1>Nex_TI <em>EdTech Platform</em></h1>
+            <p class="subtitle">
+                Demonstração visual do ecossistema de design com a atmosfera escura premium, brilhos de néon radiais e a refinada tipografia acadêmica.
+            </p>
+            <div class="button-group" style="justify-content: center;">
+                <a href="#demo" class="btn btn-primary">
+                    <span class="material-symbols-outlined">explore</span>
+                    Explorar Componentes
+                </a>
+                <a href="diretrizes.md" class="btn btn-secondary">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    Ler Diretrizes
+                </a>
+            </div>
+        </header>
+
+        <main id="demo" class="showcase-grid">
+
+            <!-- Card 1: Paleta de Cores -->
+            <section class="dna-card" aria-labelledby="colors-title">
+                <div class="card-header-icon">
+                    <span class="material-symbols-outlined">palette</span>
+                    <h3 id="colors-title">Paleta de Cores</h3>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0;">
+                    Identidade cromática baseada em tonalidades de carvão, oliva e ouro com acentos de ciano elétrico.
+                </p>
+                
+                <div class="color-palette-grid">
+                    <div class="color-block" style="background-color: #0c0c0e; color: #ffffff;">
+                        #0c0c0e
+                        <span>Background</span>
+                    </div>
+                    <div class="color-block" style="background-color: #1e1e24; color: #ffffff;">
+                        #1e1e24
+                        <span>Card BG</span>
+                    </div>
+                    <div class="color-block" style="background-color: #353822; color: #a8b865;">
+                        #353822
+                        <span>Olive BG</span>
+                    </div>
+                    <div class="color-block" style="background-color: #a8b865; color: #121214;">
+                        #a8b865
+                        <span>Olive Text</span>
+                    </div>
+                    <div class="color-block" style="background-color: #c9b177; color: #121214;">
+                        #c9b177
+                        <span>Gold Accent</span>
+                    </div>
+                    <div class="color-block" style="background-color: #00e6e6; color: #121214;">
+                        #00e6e6
+                        <span>Cyan Link</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card 2: Tipografia & Hierarquia -->
+            <section class="dna-card" aria-labelledby="typo-title">
+                <div class="card-header-icon">
+                    <span class="material-symbols-outlined">text_fields</span>
+                    <h3 id="typo-title">Tipografia & Textos</h3>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0; margin-bottom: 1.5rem;">
+                    Combinando a sofisticação da Lora Serif para cabeçalhos acadêmicos e a clareza da Inter Sans.
+                </p>
+
+                <div class="typo-sample">
+                    <div class="typo-label">Serif Title (Lora)</div>
+                    <span style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; display: block;">
+                        Estudo Ativo & <em>Repetição Espaçada</em>
+                    </span>
+                </div>
+
+                <div class="typo-sample">
+                    <div class="typo-label">Sans Content (Inter)</div>
+                    <span style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); display: block;">
+                        O sistema agenda revisões otimizadas com base nas respostas dos estudantes.
+                    </span>
+                </div>
+
+                <div class="typo-sample">
+                    <div class="typo-label">Mono Data (Fira Code)</div>
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--link-cyan); display: block;">
+                        const interval = SM2.calculate(q, EF);
+                    </span>
+                </div>
+            </section>
+
+            <!-- Card 3: Algoritmo SM-2 (Simulação) -->
+            <section class="dna-card sm2-card" aria-labelledby="sm2-title">
+                <div class="card-header-icon">
+                    <span class="material-symbols-outlined">neurology</span>
+                    <h3 id="sm2-title">Motor SM-2</h3>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0; margin-bottom: 1.5rem;">
+                    Exemplo de interface integrando o algoritmo de memorização da plataforma.
+                </p>
+
+                <div class="sm2-metric">
+                    <span class="sm2-metric-label">Intervalo de Repetição</span>
+                    <span class="sm2-metric-value">6 dias</span>
+                </div>
+
+                <div class="sm2-metric">
+                    <span class="sm2-metric-label">Fator de Facilidade (EF)</span>
+                    <span class="sm2-metric-value">2.50</span>
+                </div>
+
+                <div class="sm2-metric">
+                    <span class="sm2-metric-label">Próxima Revisão</span>
+                    <span class="sm2-metric-value" style="color: var(--accent-gold);">31/05/2026</span>
+                </div>
+
+                <div class="button-group" style="margin-top: 1.2rem;">
+                    <button class="btn btn-primary" style="flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.5rem;">
+                        Avaliar Card
+                    </button>
+                    <button class="btn btn-secondary" style="flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.5rem;">
+                        Pular
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            Desenvolvido sob o padrão estético **Design_DNA** para o projeto **Nex_TI**.<br>
+            <a href="paleta.json" target="_blank">[Ver paleta.json]</a> &bull; <a href="style.css" target="_blank">[Ver style.css]</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
