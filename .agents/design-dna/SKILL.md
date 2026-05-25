@@ -38,7 +38,7 @@ Create a directory named `design_DNA` at the root of the project workspace.
 Create the file `design_DNA/design.html` containing the complete interactive dashboard. The file uses inline SVG logo and Data-URI Favicon, which makes it 100% portable and independent of external image assets.
 
 **IMPORTANT (Favicon Color Customization):**
-Before writing the HTML, analyze the target project's design system or palette (e.g., in its stylesheet, index.html, or user request). You MUST adapt the colors of the inline SVG favicon (specifically `%23a8b865` / `#a8b865` for the background rect fill and `#0c0c0e` for the flask path fill) to match the brand colors of the target project to maintain design consistency!
+Before writing the HTML, analyze the target project's design system or palette (e.g., in its stylesheet, index.html, or user request). You MUST adapt the colors of the inline SVG favicon (specifically the background rect fill and the flask path fill) to match the brand colors of the target project to maintain design consistency!
 
 ```html
 <!DOCTYPE html>
@@ -54,8 +54,8 @@ Before writing the HTML, analyze the target project's design system or palette (
     <!-- FontAwesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Favicon inline em Data URI (Frasco Erlenmeyer amarelo-oliva/preto) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'><rect width='32' height='32' rx='8' fill='%23a8b865' /><path d='M12 6h8v2h-1v3.5l5.5 8.25c.6.9.7 1.8.3 2.62c-.4.82-1.1 1.63-2.3 1.63H9.5c-1.2 0-1.9-.81-2.3-1.63c-.4-.82-.3-1.72.3-2.62L13 11.5V8h-1V6zm1.5 5.5l-5 7.5h15l-5-7.5V8h-5v3.5z' fill='%230c0c0e' /><path d='M7.7 20.3L13 16.5c1.2-.8 2.8-.8 4 0l4.3 3c.8.6 1.3.8 2 .8c.5 0 .9-.1 1.2-.3l.1-.1l-.1.2c-.3.8-1 1.7-2.2 1.7H9.5c-1.2 0-1.9-.9-2.2-1.7l.4.8zM9.5 24h13c1.2 0 1.9-.8 2.3-1.6c-1 .4-2.2.1-3.2-.6l-4.3-3c-1.6-1.1-3.8-1.1-5.4 0l-5.3 3.8c-.8.6-1.5.8-2.1.8H9.5zM13 8h6v2h-6V8z' fill='%230c0c0e' /></svg>">
+    <!-- Favicon inline em Data URI (ADAPTAR: Frasco Erlenmeyer com as cores oficiais de destaque/fundo do projeto correspondente) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'><rect width='32' height='32' rx='8' fill='%23YOUR_BRAND_COLOR' /><path d='M12 6h8v2h-1v3.5l5.5 8.25c.6.9.7 1.8.3 2.62c-.4.82-1.1 1.63-2.3 1.63H9.5c-1.2 0-1.9-.81-2.3-1.63c-.4-.82-.3-1.72.3-2.62L13 11.5V8h-1V6zm1.5 5.5l-5 7.5h15l-5-7.5V8h-5v3.5z' fill='%23YOUR_BACKGROUND_COLOR' /><path d='M7.7 20.3L13 16.5c1.2-.8 2.8-.8 4 0l4.3 3c.8.6 1.3.8 2 .8c.5 0 .9-.1 1.2-.3l.1-.1l-.1.2c-.3.8-1 1.7-2.2 1.7H9.5c-1.2 0-1.9-.9-2.2-1.7l.4.8zM9.5 24h13c1.2 0 1.9-.8 2.3-1.6c-1 .4-2.2.1-3.2-.6l-4.3-3c-1.6-1.1-3.8-1.1-5.4 0l-5.3 3.8c-.8.6-1.5.8-2.1.8H9.5zM13 8h6v2h-6V8z' fill='%23YOUR_BACKGROUND_COLOR' /></svg>">
 </head>
 <body>
     <!-- Focos de luz radiais no fundo (Glows) -->
@@ -82,9 +82,12 @@ Before writing the HTML, analyze the target project's design system or palette (
                     <!-- Brand Header Card -->
                     <div class="dna-card brand-header-card">
                         <h2 class="brand-title">Design_DNA</h2>
-                        <div class="brand-url-container">
-                            <i class="fa-solid fa-link link-icon"></i>
-                            <a href="https://maycondls.github.io/Design_DNA" target="_blank" class="brand-link-url">https://maycondls.github.io/Design_DNA</a>
+                        <div class="brand-url-group" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                            <div class="brand-url-container" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-brands fa-github link-icon"></i>
+                                <!-- ADAPTAR: Substituir pelo link do repositório Git do projeto correspondente -->
+                                <a href="https://github.com/YourUsername/YourRepository" target="_blank" class="brand-link-url">https://github.com/YourUsername/YourRepository</a>
+                            </div>
                         </div>
                     </div>
 
