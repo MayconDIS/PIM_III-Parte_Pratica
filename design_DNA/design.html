@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Project DNA — Design_DNA</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon inline em Data URI (Frasco Erlenmeyer amarelo-oliva/preto adaptado à marca Nex_TI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'><rect width='32' height='32' rx='8' fill='%23a8b865' /><path d='M12 6h8v2h-1v3.5l5.5 8.25c.6.9.7 1.8.3 2.62c-.4.82-1.1 1.63-2.3 1.63H9.5c-1.2 0-1.9-.81-2.3-1.63c-.4-.82-.3-1.72.3-2.62L13 11.5V8h-1V6zm1.5 5.5l-5 7.5h15l-5-7.5V8h-5v3.5z' fill='%230c0c0e' /><path d='M7.7 20.3L13 16.5c1.2-.8 2.8-.8 4 0l4.3 3c.8.6 1.3.8 2 .8c.5 0 .9-.1 1.2-.3l.1-.1l-.1.2c-.3.8-1 1.7-2.2 1.7H9.5c-1.2 0-1.9-.9-2.2-1.7l.4.8zM9.5 24h13c1.2 0 1.9-.8 2.3-1.6c-1 .4-2.2.1-3.2-.6l-4.3-3c-1.6-1.1-3.8-1.1-5.4 0l-5.3 3.8c-.8.6-1.5.8-2.1.8H9.5zM13 8h6v2h-6V8z' fill='%230c0c0e' /></svg>">
+</head>
+<body>
+    <!-- Focos de luz radiais no fundo (Glows) -->
+    <div class="radial-glow glow-left"></div>
+    <div class="radial-glow glow-right"></div>
+    <div class="main-wrapper">
+        <!-- Cabeçalho Principal -->
+        <header class="dna-header">
+            <div class="dna-icon-container">
+                <!-- Ícone de hélice de DNA estilizado -->
+                <svg class="dna-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C11.45 2 11 2.45 11 3V5.07C9.28 5.4 7.74 6.27 6.54 7.46C5.35 8.66 4.47 10.21 4.14 11.93H2C1.45 11.93 1 12.38 1 12.93C1 13.48 1.45 13.93 2 13.93H4.14C4.47 15.65 5.35 17.2 6.54 18.4C7.74 19.59 9.28 20.46 11 20.79V22.86C11 23.41 11.45 23.86 12 23.86C12.55 23.86 13 23.41 13 22.86V20.79C14.72 20.46 16.26 19.59 17.46 18.4C18.65 17.2 19.53 15.65 19.86 13.93H22C22.55 13.93 23 13.48 23 12.93C23 12.38 22.55 11.93 22 11.93H19.86C19.53 10.21 18.65 8.66 17.46 7.46C16.26 6.27 14.72 5.4 13 5.07V3C13 2.45 12.55 2 12 2M12 7.07C13.62 7.07 15.08 7.82 16.03 9.07H7.97C8.92 7.82 10.38 7.07 12 7.07M6.17 11.07C6.31 10.36 6.57 9.68 6.95 9.07H17.05C17.43 9.68 17.69 10.36 17.83 11.07H6.17M6.17 12.93H17.83C17.69 13.64 17.43 14.32 17.05 14.93H6.95C6.57 14.32 6.31 13.64 6.17 12.93M12 16.93C10.38 16.93 8.92 16.18 7.97 14.93H16.03C15.08 16.18 13.62 16.93 12 16.93Z"/>
+                </svg>
+            </div>
+            <h1 class="dna-title">Your Project <span class="italic-serif">DNA</span></h1>
+            <p class="dna-subtitle">Explore a identidade estética, tipografia e diretrizes visuais que compõem o DNA de design do seu projeto</p>
+        </header>
+
+        <!-- Container do Painel -->
+        <section class="panel-container">
+            <!-- Painel Interno dos Conteúdos -->
+            <div class="panel-body">
+                <div class="panel-content">
+                    <!-- Brand Header Card -->
+                    <div class="dna-card brand-header-card">
+                        <h2 class="brand-title">Design_DNA</h2>
+                        <div class="brand-url-container">
+                            <i class="fa-solid fa-link link-icon"></i>
+                            <a href="https://maycondls.github.io/Design_DNA" target="_blank" class="brand-link-url">https://maycondls.github.io/Design_DNA</a>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Add Logo + Fonts -->
+                    <div class="card-row">
+                        <!-- Logo Card (SVG Geometria Neon embutido) -->
+                        <div class="dna-card logo-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" class="logo-svg" style="width: 100%; height: 100%; max-height: 80px;">
+                                <defs>
+                                    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="6" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="8" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <rect x="30" y="20" width="120" height="80" rx="8" fill="#18181c" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+                                <rect x="90" y="35" width="160" height="60" rx="10" fill="#a855f7" opacity="0.85" filter="url(#glow-purple)" />
+                                <rect x="210" y="25" width="140" height="70" rx="12" fill="#00e6e6" opacity="0.9" filter="url(#glow-cyan)" />
+                                <rect x="150" y="45" width="100" height="40" rx="6" fill="#353822" stroke="#a8b865" stroke-width="1.5" />
+                                <text x="200" y="70" font-family="'Lora', serif" font-size="14" fill="#a8b865" font-weight="bold" text-anchor="middle" letter-spacing="1">DNA</text>
+                            </svg>
+                        </div>
+
+                        <!-- Fonts Card -->
+                        <div class="dna-card fonts-card">
+                            <h3 class="card-label">Fonts</h3>
+                            <div class="fonts-preview-container">
+                                <div class="font-preview-item">
+                                    <span class="font-huge-char font-fira">Aa</span>
+                                    <span class="font-name-sub">JetBrains Mono</span>
+                                </div>
+                                <div class="font-preview-item">
+                                    <span class="font-huge-char font-inter">Aa</span>
+                                    <span class="font-name-sub">Inter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Colors -->
+                    <div class="dna-card colors-card">
+                        <h3 class="card-label">Colors</h3>
+                        <div class="colors-list">
+                            <div class="color-item">
+                                <div class="color-circle" style="background-color: #0c0d12;"></div>
+                                <span class="color-hex-text">#0c0d12</span>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background-color: #a3e635;"></div>
+                                <span class="color-hex-text">#a3e635</span>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background-color: #a855f7;"></div>
+                                <span class="color-hex-text">#a855f7</span>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-circle" style="background-color: #3b82f6;"></div>
+                                <span class="color-hex-text">#3b82f6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Tagline + Brand Values -->
+                    <div class="card-row">
+                        <!-- Tagline -->
+                        <div class="dna-card tagline-card">
+                            <h3 class="card-label">Tagline</h3>
+                            <p class="tagline-text">High fidelity and immersive.</p>
+                        </div>
+
+                        <!-- Brand Values -->
+                        <div class="dna-card values-card">
+                            <h3 class="card-label">Brand values</h3>
+                            <div class="badge-container">
+                                <span class="outline-badge">High Fidelity</span>
+                                <span class="outline-badge">Refined Minimalism</span>
+                                <span class="outline-badge">Atmospheric Depth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Brand Aesthetic + Brand Tone of Voice -->
+                    <div class="card-row">
+                        <!-- Brand Aesthetic -->
+                        <div class="dna-card aesthetic-card">
+                            <h3 class="card-label">Brand aesthetic</h3>
+                            <div class="badge-container">
+                                <span class="outline-badge">minimalist</span>
+                                <span class="outline-badge">refined</span>
+                                <span class="outline-badge">immersive</span>
+                                <span class="outline-badge">dark-mode</span>
+                                <span class="outline-badge">modern</span>
+                            </div>
+                        </div>
+
+                        <!-- Brand Tone of Voice -->
+                        <div class="dna-card tone-card">
+                            <h3 class="card-label">Brand tone of voice</h3>
+                            <div class="badge-container">
+                                <span class="outline-badge">Premium</span>
+                                <span class="outline-badge">Technical</span>
+                                <span class="outline-badge">Professional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Business Overview -->
+                    <div class="dna-card overview-card">
+                        <h3 class="card-label">Business overview</h3>
+                        <p class="overview-text">Este design system define as diretrizes visuais, de layout e de estilo para o desenvolvimento de interfaces e apresentações baseadas no Design_DNA. A identidade visual busca criar uma experiência de alta fidelidade, moderna, refinada e imersiva, utilizando glows de iluminação radial difusa e composições espaciais estilizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé do Projeto -->
+        <footer class="project-footer">
+            <p>Layout e diretrizes desenvolvidos a partir de referências do design_DNA.</p>
+        </footer>
+    </div>
+</body>
+</html>
