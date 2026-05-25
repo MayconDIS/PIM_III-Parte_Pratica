@@ -2,7 +2,7 @@
   "theme": "dark",
   "colors": {
     "background": {
-      "main": "#0c0c0e",
+      "main": "#0c0d12",
       "card": "#1e1e24",
       "card_header": "#18181c"
     },
