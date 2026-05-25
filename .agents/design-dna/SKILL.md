@@ -7,11 +7,14 @@ description: Apply the Design_DNA visual identity and design system to a project
 
 This skill is designed to automatically replicate the premium **Design_DNA** visual system in any web project.
 
-When this skill is invoked, you MUST execute the following actions to initialize the **Design_DNA** design tokens in the user's workspace exactly like the specified structure.
+When this skill is invoked, you MUST execute the following actions to initialize the **Design_DNA** design tokens in the user's workspace exactly like the specified structure, making sure all contents adapt seamlessly to the target project.
 
 > [!IMPORTANT]
-> **Favicon Customization Directive:**
-> The Data-URI SVG favicon colors (specifically the `fill` attributes for the Erlenmeyer flask background and icon) MUST be adapted to match the specific brand colors or style colors defined in the target project's design guidelines or stylesheet. Do not default to the yellow-olive color if the target project uses a different color palette.
+> **Dynamic Project Adaptation Directive:**
+> The design system assets (including `design.html`, `diretrizes.md`, `paleta.json`, and `style.css`) MUST NOT be copied blindly with placeholder text or unrelated brand assets.
+> 1. **Project Name & Context:** Replace all generic occurrences of "Your Project" or placeholders with the actual target project name (e.g., "Nex_TI", "Layout_personalizado", etc.) and adapt subtitles/descriptions to reflect the target project's true core values and functions.
+> 2. **Color Palette & Theme Alignment:** Adapt the primary accent colors, background tones, and highlights to coordinate with the target project's defined styling.
+> 3. **Favicon Customization:** The Data-URI SVG favicon colors (specifically the `fill` attributes for the Erlenmeyer flask background and icon) MUST be adjusted to match the chosen brand palette of the target project. Do not default to the yellow-olive color if it conflicts with the project's visual direction.
 
 ## Directory Structure to Create
 You must create a folder named `design_DNA` (with a lowercase 'd' and uppercase 'DNA') at the root of the active workspace. Inside it, create exactly four files:
